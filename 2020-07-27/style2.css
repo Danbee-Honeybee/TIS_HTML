@@ -1,0 +1,29 @@
+.box {
+    border: 5px solid #000;
+    text-align: center;
+}
+
+.box div{
+    border: 5px solid #000;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+
+/*:nth-of-type()은 태그 타입을 체크하면서 순서를 메긴다. */
+.box div:nth-of-type(1){
+    background-color: dodgerblue;
+}
+
+.box div:nth-of-type(2){
+    background-color: red;
+}
+
+.box div:nth-of-type(3){
+    background-color: fff;
+}
+
+.box div:nth-of-type(4){
+    background-color: gold;
+}
