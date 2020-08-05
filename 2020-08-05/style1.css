@@ -1,0 +1,17 @@
+.parent{
+    background-color: dodgerblue;
+    width: 600px;
+    height: 300px;
+    /* position: relative; */
+    /*if there is no relative, the parent will be Web Browser */
+}
+.child{
+    background-color: crimson;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}

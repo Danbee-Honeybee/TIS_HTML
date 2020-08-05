@@ -1,0 +1,76 @@
+.parent{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border:1px solid #000;
+}
+.child1{
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.child2{
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.child3{
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.child4{
+    position: absolute;
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+}
+
+.parent5{
+    position: relative;
+    width: 600px;
+   /* height: 300px; */
+    border:1px solid #000;  
+}
+
+.child5{/*there is no relative class with this css*/
+    /*position: absolute;*/
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+}
+
+.child6{
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+}
+
+.child7{
+    background-color: dodgerblue;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
