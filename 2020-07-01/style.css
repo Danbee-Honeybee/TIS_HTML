@@ -1,0 +1,31 @@
+.box1 {
+    width: 200px;
+    height: 200px;
+    border-color: red;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    border-color: red;
+    border-width: 2px;
+    border-style: dotted;
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    border-color: red;
+    border-width: 2px;
+    border-style: dashed;
+}
+
+.box4 {
+    width: 200px;
+    height: 200px;
+    border:5px dotted blue;
+    border-top: none;
+    border-bottom: 5px dashed red;
+}

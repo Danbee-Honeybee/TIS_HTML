@@ -1,0 +1,19 @@
+/*부모요소에는 position:relative*/
+/*자식요소에는 position:absolute*/
+/*자식요소에는 left right 에 좌표를 줘야한다.*/
+
+.parent {
+ background-color: dodgerblue;
+ width: 600px;
+ height: 300px;
+ position: relative;
+}
+.child {
+background-color: crimson;
+width: 200px;
+height: 100px;
+position: absolute;
+/*position이 없으면 아래는 아무 의미가 없는 속성이다.*/
+right: 0px;
+bottom: 0px;
+}
