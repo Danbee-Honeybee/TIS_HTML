@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>main</title>
+<style type="text/css">
+		body { margin: 0;}
+		#slidebox { width:100%; height: 300px; overflow:hidden; position: relative; z-index:0;}
+		#slider { position: relative; list-style: none; margin: 0; padding: 0; }
+		#slider li { position: absolute; left: 0; top: 0; width:100%; height:300px; }
+		#slider li img { width:100%; height:300px; border: 0;}
+</style>
+<!-- -->
+<link href="js/jquery.modal.css" type="text/css" rel="stylesheet" />
+
+<!--jQuery UI CSS -->
+<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+
+<!--jQuery UI-->
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<style type="text/css">
+	#selectTotal{
+		width: 200px; 
+		padding: .0em .5em;
+		font-family: inherit;
+		background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%; /* 네이티브 화살표 대체 */
+		border: 1px solid #C6C6C6;
+		border-radius: 0px;
+		-webkit-appearance: none; 
+		-moz-appearance: none; 
+		appearance: none;
+		background-color: white;
+	}
+	#reservButton{
+		font-size: 15px;
+		width:100px;
+		height: 35px;
+	}
+</style>
+</head>
+<body>
+	
+	<div>
+		<div id="slidebox">
+			<ul id="slider">
+				<li>
+					<img src="images/BH_main1.jpg">
+				</li>
+				<li>
+					<img src="images/BH_main3.jpg">
+				</li>
+				<li>
+					<img src="images/BH_main4.jpg">
+				</li>
+				<li>
+					    <img src="images/BH_main5.jpg">
+	    
+				</li>
+				<li>
+					<img src="images/BH_main6.jpg">
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var slider = document.getElementById("slider");
+		var slideArray = slider.getElementsByTagName("li");
+		var slideMax = slideArray.length - 1;
+		var curSlideNo = 0;
+		var nextSlideNo =null;
+		var fadeStart = false;
+		var curSlideLevel = 1;
+		var nextSlideLevel = 0;
+ 
+		for (i = 0; i <= slideMax; i++) {
+			if (i == curSlideNo) changeOpacity(slideArray[i], 1);
+			else changeOpacity(slideArray[i], 0);
+		}
+ 
+		function startSlide(dir)
+		{
+			if (fadeStart === true) return;
+			if( dir == "prev" ) 
+			{
+				nextSlideNo = curSlideNo - 1;
+				if ( nextSlideNo < 0 ) nextSlideNo = slideMax;
+			}
+			else if( dir == "next" ) 
+			{
+				nextSlideNo = curSlideNo + 1;
+				if ( nextSlideNo > slideMax ) nextSlideNo = 0;
+			}
+			else
+			{
+				fadeStart = false;
+				return;
+			}
+			fadeStart = true;
+			changeOpacity(slideArray[curSlideNo], curSlideLevel);
+			changeOpacity(slideArray[nextSlideNo], nextSlideLevel);
+			fadeInOutAction(dir);
+		}
+ 
+		function fadeInOutAction(dir)
+		{
+			curSlideLevel = curSlideLevel - 0.1;
+			nextSlideLevel = nextSlideLevel + 0.1;
+			if( curSlideLevel <= 0 ) 
+			{
+				changeOpacity(slideArray[curSlideNo], 0);
+				changeOpacity(slideArray[nextSlideNo], 1);
+				if(dir == "prev")
+				{
+					curSlideNo = curSlideNo - 1;
+					if (curSlideNo < 0) curSlideNo = slideMax;
+				}
+				else
+				{
+					curSlideNo = curSlideNo + 1;
+					if (curSlideNo > slideMax) curSlideNo = 0;
+				}
+				curSlideLevel = 1;
+				nextSlideLevel = 0;
+				fadeStart = false;
+				return;
+			}
+			changeOpacity(slideArray[curSlideNo], curSlideLevel);
+			changeOpacity(slideArray[nextSlideNo], nextSlideLevel);
+			setTimeout(function () {
+				fadeInOutAction(dir);
+			}, 100);
+		}
+ 
+		function changeOpacity(obj,level) 
+		{
+			obj.style.opacity = level; 
+			obj.style.MozOpacity = level; 
+			obj.style.KhtmlOpacity = level;
+			obj.style.MsFilter = "'progid:DXImageTransform.Microsoft.Alpha(Opacity=" + (level * 100) + ")'";
+			obj.style.filter = "alpha(opacity=" + (level * 100) + ");"; 
+		}
+ 
+		//3초마다 Fade In/Out 슬라이드를 반복하는 코드
+		var autoslider = setInterval( function(){startSlide('next');},3000);
+	</script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker1").datepicker({
+			numberOfMonths: 2,
+			onSelect: function(selected) {
+				$("#datepicker2").datepicker("option","minDate", selected)
+			},
+			dateFormat: "yy/mm/dd",
+			dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+	        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+	        monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+	        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']		});
+		$("#datepicker2").datepicker({
+			numberOfMonths: 2,
+			onSelect: function(selected) {
+				$("#datepicker1").datepicker("option","maxDate", selected)
+			},
+			dateFormat: "yy/mm/dd",
+			dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+	        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+	        monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+	        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+		});
+		
+	});
+</script>
+<script type="text/javascript">
+	function reservCheck( ){ //reservCheck(sessionID){
+		var selectTotal=document.getElementById("selectTotal").value;
+		var checkIn=document.getElementById("datepicker1").value;
+		var checkOut=document.getElementById("datepicker2").value;
+	    alert( "예약시작날짜= " + checkIn +"  예약퇴실날짜=" + checkOut) ;
+		if(sessionID==null||sessionID==""){
+			submitFun("알림창","로그인 후 이용 가능 합니다.");
+			return false;
+		}
+		
+		if(checkIn==null||checkIn==""){
+			alertFun("알림창","입실 날짜를 선택해 주세요.");
+			return false;
+		}else if(checkOut==null||checkOut==""){
+			alertFun("알림창","퇴실 날짜를 선택해 주세요.");
+			return false;
+		}else if(selectTotal==null||selectTotal==""||selectTotal=="인원수"){
+			alertFun("알림창","인원수를 선택해 주세요.");
+			return false;
+		}else if(checkIn===checkOut){
+			alertFun("알림창","입실/퇴실 날짜가 같습니다. 다시 확인해 주세요.");
+			return false;
+		}else{
+			location.href="";
+		}
+	}
+</script>
+
+<script type="text/javascript" src="js/jquery.modal.js"></script>
+<script type="text/javascript">
+	$(function() {
+		function alert_confirm(title,msg){
+			modal({
+				type: 'error',
+				title: title,
+				text: msg
+			});
+		} 
+		alertFun = alert_confirm; 
+		
+		function alert_submit(title,msg){
+			modal({
+				type: 'error',
+				title: title,
+				text: msg,
+				callback: function() {
+					location.href=" ";
+				}
+			});
+		} 
+		submitFun = alert_submit;
+	}); 
+</script>
+
+  <div id="main_reservation">
+  	<div class="main_table_reservation">
+		<span class="main_reserv3">
+			<label for="from">입실 날짜</label>
+			<input type="text" id="datepicker1" name="from" style="border: 1px solid #C6C6C6">
+			<label for="to">퇴실날짜</label>
+			<input type="text" id="datepicker2" name="to" style="border: 1px solid #C6C6C6">		</span>
+
+		<span class="main_reserv4">
+			<select id="selectTotal">
+				<option selected="selected" disabled="disabled"> 인원수</option>
+				<option value="1">1</option>
+	  			<option value="2">2</option>
+	  			<option value="3">3</option>
+	  			<option value="4">4</option>
+	  			<option value="5">5</option>
+	  			<option value="6">6</option>
+			</select>
+		</span>
+		<span class="main_reserv5">
+			<input type="button" onclick="reservCheck()" value="예약하기"  id="reservButton"  class="button">
+		</span>
+  	</div>
+  </div>
+
+  <div id="main_event">
+  		<b><font size="5" style="margin-left:50px;">EVENT</font></b>
+  		<hr id="List_titleLine">
+  </div>
+</body>
+
+</html>

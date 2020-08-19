@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03.html</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+            //$("*").css('border','5px solid green');
+
+            /*직접
+            $('#tit').css('background-color','#395980')
+            .css("border","5px solid #879EBA")*/
+
+            /*인접
+            $("h3").css()("background-color","#395980")
+            .css("border","5px solid #879EBA")*/
+
+            //직접
+            $('#tit, h1').css('background-color','#FFF08F')
+            .css('border','10px dashed #FFEB6B')
+        });
+    </script>
+
+</head>
+<body>
+
+  <h1 class = 'tit'>    안녕하세요  </h1>
+  <h2>                  선택자      </h2>
+  <h3 id = 'tit'>       직접선택자  </h2>
+  <h3>                  인접선택자  </h3>
+
+</body>
+</html>
