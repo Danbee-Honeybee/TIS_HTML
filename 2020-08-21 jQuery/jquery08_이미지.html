@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01.html</title>
+    <style>
+        .box{
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+    <!-- CDN jquery--------------------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+            var srcVal=$('#sec_1 img').attr('src');
+            console.log(srcVal);
+            
+            $('#sec_1 img')
+            .attr({
+                width:200   ,
+                height:200   ,
+                src:srcVal.replace('1.jpg','3.jpg') ,
+                alt:'바위'
+            })
+            .removeAttr('border');
+        });
+    </script>
+
+</head>
+<body>
+
+    
+  <h2>객체 조작 및 생성 221p</h2>
+
+  <section id='sec_1'><h4>이미지 속성</h4>
+  <p><img src="images/math_img_1.jpg" alt="가위" border="2"></p>
+  </section>
+
+</body>
+</html>

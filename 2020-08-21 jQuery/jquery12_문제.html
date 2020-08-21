@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01.html</title>
+    <style>
+        p{
+            font-size:20pt;
+        }
+        div{
+            height:100px;
+            background-color: antiquewhite;
+        }
+        .green{
+            color:mediumseagreen; font-size: 20pt;
+        }
+        .red{
+            color:IndianRed; font-size: 20pt;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        .pink{
+            background-color:Pink;
+        }
+    </style>
+    <!-- CDN jquery--------------------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+            $('#btn1').click(function(){
+                $('p').addClass('green');
+                $('p').removeClass('red');
+                $('#btn1').css("background", "mediumseagreen");
+                $('#btn2').css("background", "");
+            })
+
+            $('#btn2').click(function(){
+                $('p').addClass('red');
+                $('p').removeClass('green');
+                $('#btn2').css("background", "IndianRed");
+                $('#btn1').css("background", "");
+                })
+
+            $('#btn3').click(function(){
+                $('div').addClass('yellow');
+                $('div').removeClass('pink');
+                $('#btn3').css("background", "yellow");
+                $('#btn4').css("background", "");
+                })
+            
+            $('#btn4').click(function(){
+                $('div').addClass('pink');
+                $('div').removeClass('yellow');
+                $('#btn4').css("background", "Pink");
+                $('#btn3').css("background", "");
+                })
+        });
+    </script>
+
+</head>
+<body>
+
+  <h2>문제</h2>
+
+   <p>글자</p>
+   <button id='btn1'>초록색</button>
+   <button id='btn2'>빨간색</button>
+   
+    <hr>
+   
+    <div>화면</div>
+    <button id='btn3'>노란색</button>
+    <button id='btn4'>분홍색</button>
+</body>
+</html>

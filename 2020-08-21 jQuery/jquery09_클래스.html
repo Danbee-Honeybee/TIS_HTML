@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01.html</title>
+    <style>
+        .box{
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+    <!-- CDN jquery--------------------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+           $('#p1').addClass('aqua');
+           $('#p2').removeClass('red');
+           $('#p3').toggleClass('green');
+           $('#p4').toggleClass('green');
+           $('#p6').text($('#p5').hasClass('yellow'));
+        });
+    </script>
+    <style>
+    .aqua{background-color: #0ff;   }
+    .red{background-color: #f00;    }
+    .green{background-color: #0f0;  }
+    .yellow{background-color: #ff0; }
+    </style>
+</head>
+<body>
+
+  <h2>요소에 class 넣기 223p</h2>
+
+   <div class="box">
+       1. $('요소 선택').addClass('class 값'); : 요소를 선택하여 지정한 class 값을 생성         <br>
+       2. $('요소 선택').removeClass('class 값'); : 요소를 선택하여 지정한 class 값을 삭제      <br>
+       3. $('요소 선택').toggleClass('class 값'); : 요소를 선택하여 지정한 <font color='red' >class 값이 있으면 삭제, 없으면 생성</font>  <br>
+       4. $('요소 선택').hasClass('class 값'); : 선택한 요소에 지정한 class 값이 있는지 없는지 검사 있으면 true, 없으면 false
+   </div>
+
+  <p id='p1'>내용1</p>
+  <p id='p2' class='red'>내용2</p>
+  <p id='p3'>내용3</p>
+  <p id='p4' class='green'>내용4</p>
+  <p id='p5' class='yellow'>내용5</p>
+  <p id='p6'>내용6</p>
+</body>
+</html>

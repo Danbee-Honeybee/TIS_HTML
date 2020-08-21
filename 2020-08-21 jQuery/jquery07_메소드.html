@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01.html</title>
+    <style>
+        .box{
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+    <!-- CDN jquery--------------------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function(){
+            var result_1 = $('#sec_1').html();
+            console.log(result_1);
+            $('#sec_1 p').html('<a href=\'#\'>text1</a>');
+
+            var result_2 = $('#sec_2').text();
+            console.log(result_2);
+            $('#sec_2 h2').text('text()');
+
+        });
+    </script>
+
+</head>
+<body>
+
+    
+  <h1>객체 조작 메소드 219p</h1>
+
+
+  <div class="box">
+      html()/text()메소드 <hr>
+     객체를 생성, 복제, 삭제, 속성변환 하는 객체 조작 메소드
+  </div>
+
+    <section id='sec_1'>
+        <h2><em>html()</em></h2>
+        <p>내용1</p>
+    </section>
+    <section id='sec_2'>
+        <h2><em>text()</em></h2>
+        <p>내용2</p>
+    </section>
+</body>
+</html>
