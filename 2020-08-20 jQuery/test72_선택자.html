@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<!-- CDN jquery------------------------------------------------- -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+     $(function() {
+     $("#menu li:eq")
+     .css({"background-color":"#ff0"});
+    
+     $("#menu li:lt(2)")
+     .css({"background-color":"#0ff"});
+
+     $("#menu li:gt(2)")
+     .css({"background-color":"tomato"});
+    });
+
+</script>
+<body>
+    <h1>eq(index)/it(index)/gt(index) 탐색선택자 193p</h1>
+    <ul id='menu'>
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3 --> 기준</li>
+        <li>내용4</li>
+        <li>내용5</li>
+    </ul>
+
+    eq(index) : 선택한 인덱스에 위차한 요소를 선택 <br>
+    lt(index) : 선택한 인덱스보다 작은 인덱스만 참조 <br>
+    gt(index) : 선택한 인덱스보다 큰 인덱스만 참조 <br>
+</body>
+
+</html>

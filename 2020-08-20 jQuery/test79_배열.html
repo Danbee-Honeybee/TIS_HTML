@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        font-size:20pt;
+        border:3px solid black;
+        padding:20px;
+    }
+</style>
+
+<!-- CDN jquery------------------------------------------------- -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+     $(function() {
+      var idxNum = $("li").index($("#list3"));
+      console.log("idxNum : " + idxNum);
+     });
+</script>
+
+<body>
+    <h1>index() 메소드 205p</h1>
+   <br>
+    
+    <p>
+    <div class="box">
+        index() 메소드는 특정 요소의 인덱스값을 반환합니다. <br>
+        id가 0, 1, 2번째에 지정되어 있기 때문에 현재 idxNum 의 값은 2입니다.
+    </div>
+    <p>
+    
+    <ul>
+        <li>            내용1   </li>
+        <li>            내용2   </li>
+        <li id="list3"> 내용3   </li>
+        <li>            내용4   </li>
+    </ul>
+
+</body>
+</html>

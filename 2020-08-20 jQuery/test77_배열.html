@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<!-- CDN jquery------------------------------------------------- -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+     $(function() {
+        //obj는 배열명
+        var arr1 = [{
+            "area" : "서울" ,
+            "name" : "단비"
+        },{
+            "area" : "부산" ,
+            "name" : "진주"
+        },{
+            "area" : "전주" ,
+            "name" : "영숙"
+        }]
+
+        var arr2 = $.map(arr1, function(a,b){
+            if(a.area == "서울"){
+            return a;
+            }
+        });
+
+        console.log("arr2 : " + arr2);
+        console.log("====First end====");
+        
+        var arr3 = $.grep(arr1, function(a,b){
+            if(a.area == "서울"){
+                return true;
+            } else {
+                return false;
+            }
+        });
+        console.log("arr3 : " + arr3);
+        console.log("====Second end");
+        
+        
+     });
+</script>
+
+<body>
+    <h1>$.map()/$.grep() 메소드 201p</h1>
+    $.map() 메소드는 배열에 저장된 데이터 수만큼 메소드를 반복실행합니다. <br>
+    키와 value값을 가져올것같다.
+    $.grep() 메소드는 배열에 저장된 데이터 수만큼 메소드를 반복실행하며, 인덱스 오름차순으로 배열의 데이터를 불러옵니다
+
+</body>
+</html>

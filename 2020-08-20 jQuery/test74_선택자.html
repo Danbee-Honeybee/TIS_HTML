@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<!-- CDN jquery------------------------------------------------- -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+     $(function() {
+     $("#menu1 li:nth-child(1)")
+     .css({"background-color":"DodgerBlue"});
+
+     $("#menu1 li:nth-child(3)")
+     .css({"background-color":"SlateBlue"});
+
+     $("#menu1 li:nth-child(5)")
+     .css({"background-color":"LightGray"});
+
+     $("#menu1 li:nth-child(2n)")
+     .css({"background-color":"MediumSeaGreen"});
+    
+     $("#menu2 li:nth-last-child(2)")
+     .css({"background-color":"tomato"});
+     
+
+     
+     });
+</script>
+
+<body>
+    <h1>nth-child/nth-last-of-type 선택자 195p</h1>
+    nth-child(숫자n) : 선택한 요소의 무리중 지정한 숫자(배수)의 요소를 선택 <br>
+    nth-last-of-type(숫자) : 선택한 요소의 무리중 마지막에서 지정한 숫자의 요소를 선택 <br>
+    <ul id='menu1'>
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+        <li>내용1-4</li>
+        <li>내용1-5</li>
+        <li>내용1-6</li>
+    </ul>
+    <ul id='menu2'>
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+    </ul>
+
+</body>
+</html>

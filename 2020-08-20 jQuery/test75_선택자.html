@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<!-- CDN jquery------------------------------------------------- -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+
+     $(function() {
+     $('#menu1 li').slice(0,4)
+     .css({"background-color":"mediumseagreen"})
+
+     $('li:only-child')
+     .css({"background-color":"Orange"})
+     });
+</script>
+
+<body>
+    <h1>only-child/slice(index) 선택자 197p</h1>
+    only-child : 선택한 요소가 '부모 요소에서 하나뿐인 자식 요소'인 경우에 선택 <br>
+    slcie(start index, end index) : 선택한 요소의 지정 구간 인덱스의 요소를 선택 <br>
+    <ul id='menu1'>
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+        <li>내용1-4</li>
+    </ul>
+    <ul id='menu2'>
+        <li>내용2-1</li>
+    </ul>
+
+</body>
+</html>
