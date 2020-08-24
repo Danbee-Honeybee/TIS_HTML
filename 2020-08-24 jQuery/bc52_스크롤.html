@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery01.html</title>
+
+<!--------- CDN jquery----------------------------------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+
+        $(function(){
+           var topNum=$('h1').offset().top;
+           
+           // 스크롤을 위로 올리겠다. 근데 사실 없어도 항상 위에 있기 때문에 없어도 됌
+           $(window).scrollTop(topNum); 
+
+           var sct = $(window).scrollTop(); // 스크롤이 현재 위치부터 Top 까지의 거리가 sct
+           console.log(sct);
+           
+            $('#wrap1 span').text(sct);
+
+        });
+
+    </script>
+<style>
+    *{margin:0; padding:0;}
+    body{line-height:1;}
+    #wrap1{
+        height: 500px;
+        padding-top: 100px;
+
+        border:5px solid yellow;
+        background-color: navajowhite;
+    }
+    #wrap2{
+        height: 500px;
+        /*padding-top:1000px;*/
+        border:5px solid green;
+        background-color: mediumseagreen;
+    }
+    h1{
+        border:3px solid black;
+    }
+</style>
+</head>
+<body>
+    <h1> 스크롤바 위치 메소드 232p</h1>
+    <div id="wrap1">
+        scrollTop() 메소드는 브라우저의 스크롤바가 수직/수평으로 이동한 위칫값을 불러오거나 변경할 때 사용 <br>
+        애플 홈페이지에서 애니메이션 효과 줄때 사용할거같다.
+        이동한 위치값 : <span></span>
+    </div>
+    
+    <h1>하단</h1>
+    <div id="wrap2">
+        
+    </div>
+</body>
+</html>
